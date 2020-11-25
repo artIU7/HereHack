@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F9FA6D754DD0FB89E0B024F /* Pods_agentCoronas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BC0E89CEF1387857208F54C /* Pods_agentCoronas.framework */; };
 		B7C3C9DF256EBD59000BA9EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C3C9DE256EBD59000BA9EE /* AppDelegate.swift */; };
 		B7C3C9E1256EBD59000BA9EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C3C9E0256EBD59000BA9EE /* SceneDelegate.swift */; };
 		B7C3C9E3256EBD59000BA9EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C3C9E2256EBD59000BA9EE /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1BC0E89CEF1387857208F54C /* Pods_agentCoronas.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_agentCoronas.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7C3C9DB256EBD59000BA9EE /* agentCoronas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = agentCoronas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7C3C9DE256EBD59000BA9EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B7C3C9E0256EBD59000BA9EE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +26,8 @@
 		B7C3C9E7256EBD5B000BA9EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B7C3C9EA256EBD5B000BA9EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B7C3C9EC256EBD5B000BA9EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E84CEBD286F8CCF6E187010E /* Pods-agentCoronas.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-agentCoronas.debug.xcconfig"; path = "Target Support Files/Pods-agentCoronas/Pods-agentCoronas.debug.xcconfig"; sourceTree = "<group>"; };
+		E9E6EB2FE744EF9B22B1BA17 /* Pods-agentCoronas.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-agentCoronas.release.xcconfig"; path = "Target Support Files/Pods-agentCoronas/Pods-agentCoronas.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F9FA6D754DD0FB89E0B024F /* Pods_agentCoronas.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1DE3F983D137C4ED216B2F45 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1BC0E89CEF1387857208F54C /* Pods_agentCoronas.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8F33EB86A373C42E25B223D6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E84CEBD286F8CCF6E187010E /* Pods-agentCoronas.debug.xcconfig */,
+				E9E6EB2FE744EF9B22B1BA17 /* Pods-agentCoronas.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		B7C3C9D2256EBD59000BA9EE = {
 			isa = PBXGroup;
 			children = (
 				B7C3C9DD256EBD59000BA9EE /* agentCoronas */,
 				B7C3C9DC256EBD59000BA9EE /* Products */,
+				8F33EB86A373C42E25B223D6 /* Pods */,
+				1DE3F983D137C4ED216B2F45 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B7C3C9EF256EBD5B000BA9EE /* Build configuration list for PBXNativeTarget "agentCoronas" */;
 			buildPhases = (
+				4CE17D066CC1E02CCAE3F366 /* [CP] Check Pods Manifest.lock */,
 				B7C3C9D7256EBD59000BA9EE /* Sources */,
 				B7C3C9D8256EBD59000BA9EE /* Frameworks */,
 				B7C3C9D9256EBD59000BA9EE /* Resources */,
+				A85F934577336C7768642C18 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4CE17D066CC1E02CCAE3F366 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-agentCoronas-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A85F934577336C7768642C18 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-agentCoronas/Pods-agentCoronas-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-agentCoronas/Pods-agentCoronas-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-agentCoronas/Pods-agentCoronas-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B7C3C9D7256EBD59000BA9EE /* Sources */ = {
@@ -283,6 +352,7 @@
 		};
 		B7C3C9F0256EBD5B000BA9EE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E84CEBD286F8CCF6E187010E /* Pods-agentCoronas.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -303,6 +373,7 @@
 		};
 		B7C3C9F1256EBD5B000BA9EE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9E6EB2FE744EF9B22B1BA17 /* Pods-agentCoronas.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
