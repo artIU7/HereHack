@@ -1,0 +1,13 @@
+/app/server/serverCoronas/.build/*
+/app/server/serverCoronas/.swiftpm
+/app/server/serverCoronas/.git/*
+/app/server/serverCoronas/.gitigbore
+/app/server/serverCoronas/.dockerignore
+/app/server/serverCoronas/docker-compose.yml
+/app/server/serverCoronas/Dockerfile
+/app/server/serverCoronas/Package.resolved
+/app/server/serverCoronas/no_commit/*
+/app/client/agentCoronas/Pods/*
+/sketch/*
+/presentation/video/*
+/rules/*
