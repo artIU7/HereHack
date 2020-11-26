@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9F9FA6D754DD0FB89E0B024F /* Pods_agentCoronas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BC0E89CEF1387857208F54C /* Pods_agentCoronas.framework */; };
+		B76AC5A425706D4900DD5D30 /* SceneMaps.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B76AC5A325706D4900DD5D30 /* SceneMaps.storyboard */; };
 		B778FE7E256F02A5000F5E36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B778FE7D256F02A5000F5E36 /* Assets.xcassets */; };
 		B778FE8C256F063E000F5E36 /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B778FE8B256F063E000F5E36 /* MaterialView.swift */; };
 		B778FE91256F15DB000F5E36 /* SceneViewLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B778FE90256F15DB000F5E36 /* SceneViewLayer.swift */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		1BC0E89CEF1387857208F54C /* Pods_agentCoronas.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_agentCoronas.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B76AC5A325706D4900DD5D30 /* SceneMaps.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SceneMaps.storyboard; sourceTree = "<group>"; };
 		B778FE7D256F02A5000F5E36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B778FE8B256F063E000F5E36 /* MaterialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
 		B778FE90256F15DB000F5E36 /* SceneViewLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneViewLayer.swift; sourceTree = "<group>"; };
@@ -63,6 +65,38 @@
 				E9E6EB2FE744EF9B22B1BA17 /* Pods-agentCoronas.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		B76AC59F25706CF400DD5D30 /* SceneMaps */ = {
+			isa = PBXGroup;
+			children = (
+				B76AC5A225706D1E00DD5D30 /* View */,
+				B76AC5A125706D1700DD5D30 /* Controller */,
+				B76AC5A025706D0E00DD5D30 /* Model */,
+			);
+			path = SceneMaps;
+			sourceTree = "<group>";
+		};
+		B76AC5A025706D0E00DD5D30 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B76AC5A125706D1700DD5D30 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B76AC5A225706D1E00DD5D30 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B76AC5A325706D4900DD5D30 /* SceneMaps.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		B778FE85256F04B3000F5E36 /* Application */ = {
@@ -139,6 +173,7 @@
 		B7C3C9DD256EBD59000BA9EE /* agentCoronas */ = {
 			isa = PBXGroup;
 			children = (
+				B76AC59F25706CF400DD5D30 /* SceneMaps */,
 				B778FE85256F04B3000F5E36 /* Application */,
 				B7C3C9E9256EBD5B000BA9EE /* LaunchScreen.storyboard */,
 				B778FE7D256F02A5000F5E36 /* Assets.xcassets */,
@@ -208,6 +243,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7C3C9EB256EBD5B000BA9EE /* LaunchScreen.storyboard in Resources */,
+				B76AC5A425706D4900DD5D30 /* SceneMaps.storyboard in Resources */,
 				B778FE94256F181A000F5E36 /* art.scnassets in Resources */,
 				B778FE7E256F02A5000F5E36 /* Assets.xcassets in Resources */,
 				B7C3C9E6256EBD59000BA9EE /* SettingUser.storyboard in Resources */,

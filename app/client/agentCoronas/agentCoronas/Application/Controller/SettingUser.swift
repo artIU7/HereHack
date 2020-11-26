@@ -11,22 +11,15 @@ class SettingUser: UIViewController {
     // SceneKit scene
     @IBOutlet weak var scene: SCNView!
     var sceneNode: SCNScene!
-          var cameraNode: SCNNode!
-          var camera: SCNCamera!
-          var playerNode: SCNNode!
-          var officeNode: SCNNode!
-          var tokens = [SCNNode]()
-          var ambientLightNode: SCNNode!
-          var ambientLight: SCNLight!
-          var omniLightNode: SCNNode!
-          var omniLight: SCNLight!
-          var sceneRect: CGRect!
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupSceneView()
         self.initializeHideKeyboard()
         // Do any additional setup after loading the view.
     }
+    // IBAction open maps controller
+    
 }
 
 
@@ -41,4 +34,11 @@ class SettingUser: UIViewController {
         view.endEditing(true)
     }
  }
+extension SettingUser {
+    func displayContentController(content: UIViewController) {
+        addChild(content)
+        self.view.addSubview(content.view)
+        content.didMove(toParent: self)
+    }
+}
 
