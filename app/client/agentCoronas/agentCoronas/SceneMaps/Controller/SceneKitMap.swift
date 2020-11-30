@@ -48,73 +48,77 @@ extension SceneMapsController {
         
         // player node
         playerNode = SCNNode()
-        let playerScene = SCNScene(named: "art.scnassets/Idle/fixIdle.dae")!
+        let playerScene = SCNScene(named: "art.scnassets/Idle/fixIdle.scn")!
     
     
-        let model = playerScene.rootNode.childNode(withName: "model",
+        let model = playerScene.rootNode.childNode(withName: "skin",
                                                recursively: false)!
-        let rig_model = playerScene.rootNode.childNode(withName: "rig_model",
-                                           recursively: false)!
+     //   let rig_model = playerScene.rootNode.childNode(withName: "rig_model",
+                                       //    recursively: false)!
+    
+        // scale model / rig_model
+        model.scale = SCNVector3(0.2,0.2,0.2)
+      //  rig_model.scale = SCNVector3(0.2,0.2,0.2)
     
         playerNode.addChildNode(model)
-        playerNode.addChildNode(rig_model)
+     //   playerNode.addChildNode(rig_model)
+        
         scene.rootNode.addChildNode(playerNode)
         
         // corona node
-        tokens.append(addTokens(NMAGeoCoordinates(latitude: 55.892882956952704, longitude: 37.54391640563343),id : 0))
-        tokens.append(addTokens(NMAGeoCoordinates(latitude: 55.89176982388743, longitude: 37.54422555312789),id : 1))
-        tokens.append(addTokens(NMAGeoCoordinates(latitude: 55.892265975352416, longitude: 37.544225517421054),id : 2))
-        tokens.append(addTokens(NMAGeoCoordinates(latitude: 55.89227537500546, longitude: 37.54463736214839),id : 3))
-        for tok in tokens {
-            scene.rootNode.addChildNode(tok)
+        coronas.append(addTokens(NMAGeoCoordinates(latitude: 55.892882956952704, longitude: 37.54391640563343),id : 0))
+        coronas.append(addTokens(NMAGeoCoordinates(latitude: 55.89176982388743, longitude: 37.54422555312789),id : 1))
+        coronas.append(addTokens(NMAGeoCoordinates(latitude: 55.892265975352416, longitude: 37.544225517421054),id : 2))
+        coronas.append(addTokens(NMAGeoCoordinates(latitude: 55.89227537500546, longitude: 37.54463736214839),id : 3))
+        for virus in coronas {
+            scene.rootNode.addChildNode(virus)
         }
     }
     func addTokens(_ geo : NMAGeoCoordinates,id : Int) -> SCNNode {
-        var token : SCNNode!
         
-        //officeNode = SCNNode(geometry: SCNBox(width: 20.0, height: 20.0, length: 20.0, chamferRadius: 2.0))
         let coronasScene = SCNScene(named: "art.scnassets/uszd/Coronavirus.usdz")!
-        officeNode = coronasScene.rootNode.childNodes.first!
-        officeNode.scale = SCNVector3(10, 10, 10)
+        coronasNode = coronasScene.rootNode.childNodes.first!
+        coronasNode.scale = SCNVector3(0.2, 0.2, 0.2)
 
-        officeNode.name = "present \(id)"
-        officeNode.setValue(CLLocationCoordinate2DMake(geo.latitude, geo.longitude), forKey: "coordinate")
+        coronasNode.name = "present \(id)"
+        coronasNode.setValue(CLLocationCoordinate2DMake(geo.latitude, geo.longitude), forKey: "coordinate")
         
         let rotate = SCNAction.rotateBy(x: 0, y: 1, z: 0, duration: 0.5)
         let moveSequence = SCNAction.sequence([rotate])
         let moveLoop = SCNAction.repeatForever(moveSequence)
-        officeNode.runAction(moveLoop)
-        officeNode.setValue(false, forKey: "tapped")
-        token = officeNode
-        return token
+        coronasNode.runAction(moveLoop)
+        coronasNode.setValue(false, forKey: "tapped")
+        return coronasNode
     }
+    
     func addAnimations(_ node :  SCNNode!) {
         let rotate = SCNAction.rotateBy(x: 0, y: 0, z: 3, duration: 0.5)
         let moveSequence = SCNAction.sequence([rotate])
         let moveLoop = SCNAction.repeatForever(moveSequence)
         node.runAction(moveLoop)
     }
+    
     // convert geographic coordinates to screen coordinates in the map view
        func coordinateToOverlayPosition(coordinate: CLLocationCoordinate2D) -> SCNVector3 {
-        let p: CGPoint = viewMap.point(from: NMAGeoCoordinates(latitude: coordinate.latitude, longitude: coordinate.longitude))
-           return SCNVector3Make(Float(p.x), Float(sceneRect.size.height - p.y), 0)
+            let p: CGPoint = viewMap.point(from: NMAGeoCoordinates(latitude: coordinate.latitude, longitude: coordinate.longitude))
+            return SCNVector3Make(Float(p.x), Float(sceneRect.size.height - p.y), 0)
        }
     
-    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
-          // get pitch of map
-          let mapPitchRads = Float(viewMap.tilt) * (Float.pi / 180.0)
-          print("current tilt :\(viewMap.tilt)")
-          // update player
-          let playerPoint = coordinateToOverlayPosition(coordinate: tempPositin)
-          print("user: \(tempPositin)")
-          let scaleMat = SCNMatrix4MakeScale(4.0, 4.0, 4.0)
-          playerNode.transform = SCNMatrix4Mult(scaleMat,
+       func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+            // get pitch of map
+            let mapPitchRads = Float(viewMap.tilt) * (Float.pi / 180.0)
+            print("current tilt :\(viewMap.tilt)")
+            // update player
+            let playerPoint = coordinateToOverlayPosition(coordinate: tempPositin)
+            print("user: \(tempPositin)")
+            let scaleMat = SCNMatrix4MakeScale(4.0, 4.0, 4.0)
+            playerNode.transform = SCNMatrix4Mult(scaleMat,
                                                 SCNMatrix4Mult(SCNMatrix4MakeRotation(-mapPitchRads, 1, 0, 0),
                                                                SCNMatrix4MakeTranslation(playerPoint.x, playerPoint.y, 0)))
           // update office
-          for tokenPoint in tokens {
-            let officePoint = coordinateToOverlayPosition(coordinate: tokenPoint.value(forKey: "coordinate") as! CLLocationCoordinate2D)
-                       tokenPoint.position = SCNVector3Make(officePoint.x, officePoint.y,0)
+          for coronasPoint in coronas {
+                let coronasPos = coordinateToOverlayPosition(coordinate: coronasPoint.value(forKey: "coordinate") as! CLLocationCoordinate2D)
+                coronasPoint.position = SCNVector3Make(coronasPos.x, coronasPos.y,0)
           }
           // update light position
           omniLightNode.position = SCNVector3Make(playerPoint.x, playerPoint.y + 30, 20) // magic number alert!

@@ -27,8 +27,8 @@ class SceneMapsController: UIViewController {
           var cameraNode: SCNNode!
           var camera: SCNCamera!
           var playerNode: SCNNode!
-          var officeNode: SCNNode!
-          var tokens = [SCNNode]()
+          var coronasNode: SCNNode!
+          var coronas = [SCNNode]()
           var ambientLightNode: SCNNode!
           var ambientLight: SCNLight!
           var omniLightNode: SCNNode!
