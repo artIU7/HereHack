@@ -22,6 +22,7 @@ extension SettingUser : SCNSceneRendererDelegate {
         scene.isPlaying = true
          // player node
         let playerScene = SCNScene(named: "art.scnassets/Idle/fixIdle.dae")! // test load static object
+        
         scene.scene = playerScene // add our text holder to the sce
       }
  
