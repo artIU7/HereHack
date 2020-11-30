@@ -29,7 +29,7 @@
                                             <color key="titleColor" systemColor="systemYellowColor"/>
                                         </state>
                                         <connections>
-                                            <segue destination="bhm-RK-4rR" kind="presentation" id="vDb-nh-eUE"/>
+                                            <action selector="toMaps" destination="BYZ-38-t0r" eventType="touchUpInside" id="121-co-9mI"/>
                                         </connections>
                                     </button>
                                 </subviews>

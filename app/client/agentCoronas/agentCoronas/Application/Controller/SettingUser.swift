@@ -11,7 +11,7 @@ class SettingUser: UIViewController {
     // SceneKit scene
     @IBOutlet weak var scene: SCNView!
     var sceneNode: SCNScene!
-  
+    let mapsChild = SceneMapsController()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupSceneView()
@@ -19,7 +19,12 @@ class SettingUser: UIViewController {
         // Do any additional setup after loading the view.
     }
     // IBAction open maps controller
-    
+    @IBAction func toMaps() {
+        let storyboardName = "SceneMaps"
+        let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
+        guard let controller = storyboard.instantiateInitialViewController() else { return }
+        displayContentController(content: controller)
+    }
 }
 
 

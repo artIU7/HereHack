@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9F9FA6D754DD0FB89E0B024F /* Pods_agentCoronas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BC0E89CEF1387857208F54C /* Pods_agentCoronas.framework */; };
 		B76AC5A425706D4900DD5D30 /* SceneMaps.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B76AC5A325706D4900DD5D30 /* SceneMaps.storyboard */; };
+		B76AC5AB257074BC00DD5D30 /* SceneMapsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76AC5AA257074BC00DD5D30 /* SceneMapsController.swift */; };
 		B778FE7E256F02A5000F5E36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B778FE7D256F02A5000F5E36 /* Assets.xcassets */; };
 		B778FE8C256F063E000F5E36 /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B778FE8B256F063E000F5E36 /* MaterialView.swift */; };
 		B778FE91256F15DB000F5E36 /* SceneViewLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B778FE90256F15DB000F5E36 /* SceneViewLayer.swift */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		1BC0E89CEF1387857208F54C /* Pods_agentCoronas.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_agentCoronas.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B76AC5A325706D4900DD5D30 /* SceneMaps.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SceneMaps.storyboard; sourceTree = "<group>"; };
+		B76AC5AA257074BC00DD5D30 /* SceneMapsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneMapsController.swift; sourceTree = "<group>"; };
 		B778FE7D256F02A5000F5E36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B778FE8B256F063E000F5E36 /* MaterialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
 		B778FE90256F15DB000F5E36 /* SceneViewLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneViewLayer.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 		B76AC5A125706D1700DD5D30 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B76AC5AA257074BC00DD5D30 /* SceneMapsController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B778FE91256F15DB000F5E36 /* SceneViewLayer.swift in Sources */,
+				B76AC5AB257074BC00DD5D30 /* SceneMapsController.swift in Sources */,
 				B7C3C9E3256EBD59000BA9EE /* SettingUser.swift in Sources */,
 				B7C3C9DF256EBD59000BA9EE /* AppDelegate.swift in Sources */,
 				B7C3C9E1256EBD59000BA9EE /* SceneDelegate.swift in Sources */,
