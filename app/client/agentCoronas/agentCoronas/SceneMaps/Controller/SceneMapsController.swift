@@ -7,15 +7,41 @@
 
 import UIKit
 import NMAKit
+import SceneKit
 
 class SceneMapsController: UIViewController {
+    
     var colorScheme: NMACustomizableScheme?
     let colorSchemeName = "color"
     let zoom = NMAZoomRange(minimum: 0, maximum: 20)
+    var tempPositin : CLLocationCoordinate2D!
+    var centerCoordinate: CLLocationCoordinate2D?
+    let locationManager = CLLocationManager()
+
     @IBOutlet var viewMap : NMAMapView!
+    
+    @IBOutlet var sceneView : SCNView!
+
+    // SceneKit scene
+          var scene: SCNScene!
+          var cameraNode: SCNNode!
+          var camera: SCNCamera!
+          var playerNode: SCNNode!
+          var officeNode: SCNNode!
+          var tokens = [SCNNode]()
+          var ambientLightNode: SCNNode!
+          var ambientLight: SCNLight!
+          var omniLightNode: SCNNode!
+          var omniLight: SCNLight!
+          var sceneRect: CGRect!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.colorCustomization()
+        self.initLocationManager()
+        self.startLocation()
+        self.initTiltMap()
+        self.setupSceneView()
         // Do any additional setup after loading the view.
     }
     
@@ -114,6 +140,10 @@ class SceneMapsController: UIViewController {
        // viewMap.set(geoCenter: NMAGeoCoordinates(latitude: 55.790915, longitude: 38.438565), zoomLevel: viewMap.minimumZoomLevel, animation: NMAMapAnimation.none)
     }
 
+    func initTiltMap() {
+        self.viewMap.positionIndicator.tracksCourse = false
+        self.viewMap.set(tilt: 65, animation: .none)
+    }
     /*
     // MARK: - Navigation
 
@@ -125,3 +155,6 @@ class SceneMapsController: UIViewController {
     */
 
 }
+extension SceneMapsController : NMAMapGestureDelegate,NMAMapViewDelegate {}
+extension SceneMapsController : CLLocationManagerDelegate {}
+extension SceneMapsController : SCNSceneRendererDelegate {}

@@ -19,6 +19,8 @@
 		B7C3C9E3256EBD59000BA9EE /* SettingUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C3C9E2256EBD59000BA9EE /* SettingUser.swift */; };
 		B7C3C9E6256EBD59000BA9EE /* SettingUser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7C3C9E4256EBD59000BA9EE /* SettingUser.storyboard */; };
 		B7C3C9EB256EBD5B000BA9EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7C3C9E9256EBD5B000BA9EE /* LaunchScreen.storyboard */; };
+		B7D7A48525755D7700D84E75 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D7A48425755D7700D84E75 /* LocationService.swift */; };
+		B7D7A48825755EB100D84E75 /* SceneKitMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D7A48725755EB100D84E75 /* SceneKitMap.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		B7C3C9E5256EBD59000BA9EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SettingUser.storyboard; sourceTree = "<group>"; };
 		B7C3C9EA256EBD5B000BA9EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B7C3C9EC256EBD5B000BA9EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B7D7A48425755D7700D84E75 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		B7D7A48725755EB100D84E75 /* SceneKitMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneKitMap.swift; sourceTree = "<group>"; };
 		E84CEBD286F8CCF6E187010E /* Pods-agentCoronas.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-agentCoronas.debug.xcconfig"; path = "Target Support Files/Pods-agentCoronas/Pods-agentCoronas.debug.xcconfig"; sourceTree = "<group>"; };
 		E9E6EB2FE744EF9B22B1BA17 /* Pods-agentCoronas.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-agentCoronas.release.xcconfig"; path = "Target Support Files/Pods-agentCoronas/Pods-agentCoronas.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				B76AC5AA257074BC00DD5D30 /* SceneMapsController.swift */,
+				B7D7A48725755EB100D84E75 /* SceneKitMap.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -176,6 +181,7 @@
 		B7C3C9DD256EBD59000BA9EE /* agentCoronas */ = {
 			isa = PBXGroup;
 			children = (
+				B7D7A48325755D6500D84E75 /* LocationServie */,
 				B76AC59F25706CF400DD5D30 /* SceneMaps */,
 				B778FE85256F04B3000F5E36 /* Application */,
 				B7C3C9E9256EBD5B000BA9EE /* LaunchScreen.storyboard */,
@@ -184,6 +190,14 @@
 				B778FE93256F181A000F5E36 /* art.scnassets */,
 			);
 			path = agentCoronas;
+			sourceTree = "<group>";
+		};
+		B7D7A48325755D6500D84E75 /* LocationServie */ = {
+			isa = PBXGroup;
+			children = (
+				B7D7A48425755D7700D84E75 /* LocationService.swift */,
+			);
+			path = LocationServie;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,6 +316,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7D7A48825755EB100D84E75 /* SceneKitMap.swift in Sources */,
+				B7D7A48525755D7700D84E75 /* LocationService.swift in Sources */,
 				B778FE91256F15DB000F5E36 /* SceneViewLayer.swift in Sources */,
 				B76AC5AB257074BC00DD5D30 /* SceneMapsController.swift in Sources */,
 				B7C3C9E3256EBD59000BA9EE /* SettingUser.swift in Sources */,
