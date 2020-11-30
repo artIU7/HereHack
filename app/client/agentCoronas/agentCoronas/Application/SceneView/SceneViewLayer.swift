@@ -17,21 +17,15 @@ extension SettingUser  {
         // player node
         var playerScene = SCNScene(named: "art.scnassets/Idle/fixIdle.dae")! // test load static object
         //
-        let player = playerScene.rootNode.childNode(withName: "model",
+        let player = playerScene.rootNode.childNode(withName: "rigl",
                                                                  recursively: false)!
-        let rigPlayer = playerScene.rootNode.childNode(withName: "rig_model",
-                                                                 recursively: false)!
+      
         player.scale.x = 0.1// = SCNVector3(0.2,0.2,0.2)
         player.scale.y = 0.1
         player.scale.z = 0.1
         
-        rigPlayer.scale.x = 0.1// SCNVector3(0.2,0.2,0.2)
-        rigPlayer.scale.y = 0.1
-        rigPlayer.scale.z = 0.1
-        
         playerScene = SCNScene()
         playerScene.rootNode.addChildNode(player)
-        playerScene.rootNode.addChildNode(rigPlayer)
         // 2: Add camera node
         let cameraNode = SCNNode()
         cameraNode.camera = SCNCamera()

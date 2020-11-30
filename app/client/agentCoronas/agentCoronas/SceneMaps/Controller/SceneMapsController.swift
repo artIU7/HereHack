@@ -38,10 +38,25 @@ class SceneMapsController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.colorCustomization()
-        self.initLocationManager()
-        self.startLocation()
-        self.initTiltMap()
-        self.setupSceneView()
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
+            self.initLocationManager()
+            self.startLocation()
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+                self.mapInit()
+                self.initTiltMap()
+                self.setupSceneView()
+                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+                    if (NMANavigationManager.sharedInstance().navigationState == .idle) {
+                        NMANavigationManager.sharedInstance().map = self.viewMap
+                        NMANavigationManager.sharedInstance().mapTrackingTilt = NMAMapTrackingTilt(rawValue: 65)!
+                        NMANavigationManager.sharedInstance().mapTrackingAutoZoomEnabled = true
+                       // self.viewMap.set(zoomLevel: 20, animation: .none)
+                      //  self.viewMap.set(tilt: 65, animation: .none)
+                        NMANavigationManager.sharedInstance().startTracking(.pedestrian)
+                        }
+                }
+            }
+        }
         // Do any additional setup after loading the view.
     }
     
@@ -139,7 +154,13 @@ class SceneMapsController: UIViewController {
        
        // viewMap.set(geoCenter: NMAGeoCoordinates(latitude: 55.790915, longitude: 38.438565), zoomLevel: viewMap.minimumZoomLevel, animation: NMAMapAnimation.none)
     }
-
+    
+    func mapInit() {
+        if tempPositin != nil {
+            self.viewMap.set(geoCenter: NMAGeoCoordinates(latitude: tempPositin.latitude, longitude: tempPositin.longitude), zoomLevel: 15, orientation: 0, tilt: 65, animation: .bow)
+        }
+        self.viewMap.positionIndicator.tracksCourse = false
+    }
     func initTiltMap() {
         self.viewMap.positionIndicator.tracksCourse = false
         self.viewMap.set(tilt: 65, animation: .none)

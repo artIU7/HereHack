@@ -44,7 +44,7 @@ extension SceneMapsController  {
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
         //if model != nil {
          //   model.yaw = Float(newHeading.magneticHeading)
-         //   viewMap.set(orientation: Float(newHeading.magneticHeading), animation: .linear)
+        viewMap.set(orientation: Float(newHeading.magneticHeading), animation: .linear)
         //}
   //      print("magneticHeading \(newHeading.magneticHeading)")
     }
